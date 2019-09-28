@@ -58,11 +58,14 @@ export class AccountDetails extends Component {
   _getPurchases = () => {
     const { token } = this.state;
     console.log(token);
-    Axios.get('http://localhost:5000/wallet/purchase', {
-      headers: {
-        Authorization: localStorage.getItem('token')
+    Axios.get(
+      'http://ec2-52-221-50-135.ap-southeast-1.compute.amazonaws.com:3001/wallet/purchase',
+      {
+        headers: {
+          Authorization: localStorage.getItem('token')
+        }
       }
-    })
+    )
       .then(({ data: response }) => {
         console.log(response);
         const { data } = response;
@@ -77,11 +80,14 @@ export class AccountDetails extends Component {
   _getProfile = () => {
     const { token } = this.state;
     console.log(token);
-    Axios.get('http://localhost:5000/user', {
-      headers: {
-        Authorization: localStorage.getItem('token')
+    Axios.get(
+      'http://ec2-52-221-50-135.ap-southeast-1.compute.amazonaws.com:3001/user',
+      {
+        headers: {
+          Authorization: localStorage.getItem('token')
+        }
       }
-    })
+    )
       .then(({ data: response }) => {
         console.log(response);
         const { data } = response;

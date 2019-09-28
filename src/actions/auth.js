@@ -10,7 +10,8 @@ export function loginUser(params) {
     headers: { 'content-type': 'application/x-www-form-urlencoded' },
     data: qs.stringify(params),
     // url: "http://ec2-52-221-50-135.ap-southeast-1.compute.amazonaws.com:3000/auth"
-    url: 'http://localhost:5000/auth'
+    url:
+      'http://ec2-52-221-50-135.ap-southeast-1.compute.amazonaws.com:3001/auth'
   };
   return {
     type: `LOGIN_USER`,
@@ -64,7 +65,9 @@ export function validateOtp(params) {
 export function confirmRegister(params) {
   return {
     type: `CONFIRM_REGISTER`,
-    payload: axios.get(`http://localhost:5000/auth/confirm/${params}`)
+    payload: axios.get(
+      `http://ec2-52-221-50-135.ap-southeast-1.compute.amazonaws.com:3001/auth/confirm/${params}`
+    )
     // payload: axios.get(
     //   `http://ec2-52-221-50-135.ap-southeast-1.compute.amazonaws.com:3000/auth/confirm/${params}`
     // )
@@ -76,7 +79,7 @@ export function wallet(params) {
     type: `WALLET`,
     payload: axios.get(
       // `http://ec2-52-221-50-135.ap-southeast-1.compute.amazonaws.com:3000/wallet/`,
-      `http://localhost:5000/wallet/`,
+      `http://ec2-52-221-50-135.ap-southeast-1.compute.amazonaws.com:3001/wallet/`,
       {
         headers: {
           Authorization: localStorage.getItem('token')

@@ -15,7 +15,9 @@ export default class Invest extends Component {
 
   _getChips = () => {
     axios
-      .get('http://localhost:5000/chips')
+      .get(
+        'http://ec2-52-221-50-135.ap-southeast-1.compute.amazonaws.com:3001/chips'
+      )
       .then(({ data: response }) => {
         const { data } = response;
         this.setState(prevState => ({
