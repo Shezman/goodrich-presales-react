@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export class Header extends Component {
-    render() {
-        return (
-        <div className="navbar navbar-custom sticky" role="navigation">
+  render() {
+    return (
+      <div className="navbar navbar-custom sticky" role="navigation">
         <div className="container">
           <div className="navbar-collapse collapse" id="data-scroll">
             <ul className="nav navbar-nav navbar-left">
@@ -65,16 +65,16 @@ export class Header extends Component {
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  EN/CN
+                  EN
                   <span className="caret" />
                 </a>
                 <ul className="dropdown-menu dropdown-menu-dark dropdown-left-0">
                   <li>
                     <a href>English</a>
                   </li>
-                  <li>
-                    <a href>Español</a>
-                  </li>
+                  {/* <li>
+                    <a href>CHINESE</a>
+                  </li> */}
                 </ul>
               </li>
               <li>
@@ -88,8 +88,8 @@ export class Header extends Component {
         </div>
         {/* end container */}
       </div>
-        )
-    }
+    );
+  }
 }
 
-export default Header
+export default Header;

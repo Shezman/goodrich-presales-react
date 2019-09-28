@@ -1,79 +1,76 @@
-import Landing from "../views/Landing/Landing";
-import Exchange from "../views/Exchange/Exchange";
-import Congratulation from "../views/Landing/Congratulation";
-import Otp from "../views/Landing/Otp";
-import BuyChip from "../views/BuyChip/BuyChip";
+import Landing from '../views/Landing/Landing';
+import Exchange from '../views/Exchange/Exchange';
+import Congratulation from '../views/Landing/Congratulation';
+import Otp from '../views/Landing/Otp';
+import BuyChip from '../views/BuyChipInfo/BuyChip';
 
-import Deposit from "../views/Deposit/Deposit";
-import SuccessDeposit from "../views/Deposit/SuccessDeposit";
-import About from "../views/Common/About";
-import Contact from "../views/Common/Contact";
-import Faq from "../views/Common/Faq";
-import Login from "../views/Login/Login";
-import Register from "../views/Register/Register";
-import ForgotPassword from "../views/ForgotPassword/ForgotPassword";
+import Deposit from '../views/Deposit/Deposit';
+import SuccessDeposit from '../views/Deposit/SuccessDeposit';
+import About from '../views/Common/About';
+import Contact from '../views/Common/Contact';
+import Faq from '../views/Common/Faq';
+import Login from '../views/Login/Login';
+import Register from '../views/Register/Register';
+import ForgotPassword from '../views/ForgotPassword/ForgotPassword';
 
 const OuterRoutes = [
   {
-    path: "/",
+    path: '/',
     component: Landing
   },
   {
-    path: "/exchange",
+    path: '/exchange',
     component: Exchange
   },
 
   {
-    path: "/register",
+    path: '/register',
     component: Register
   },
 
   {
-    path: "/forgot_password",
+    path: '/forgot_password',
     component: ForgotPassword
   },
 
   {
-    path: "/login",
+    path: '/login',
     component: Login
   },
   {
-    path: "/congratulations/:token",
+    path: '/congratulations/:token',
     component: Congratulation
   },
   {
-    path: "/buychip",
+    path: '/buychip',
     component: BuyChip
   },
-  
-  
+
   {
-    path: "/deposit",
+    path: '/deposit',
     component: Deposit
   },
   {
-    path: "/success_deposit",
+    path: '/success_deposit',
     component: SuccessDeposit
   },
   {
-    path: "/faq",
+    path: '/faq',
     component: Faq
   },
   {
-    path: "/otp",
+    path: '/otp',
     component: Otp
   },
-
   {
-    path: "/about",
+    path: '/about',
     component: About
   },
   {
-    path: "/contact",
+    path: '/contact',
     component: Contact
   },
 
-
-  { redirect: true, path: "/", to: "/" }
+  { redirect: true, path: '/', to: '/' }
 ];
 export default OuterRoutes;

@@ -37,6 +37,17 @@ export class InnerHeader extends Component {
               </li>
               <li
                 className={
+                  this.props.props.location.pathname === '/account_details'
+                    ? 'active'
+                    : ''
+                }
+              >
+                <Link to="/account_details" className="scroll-func">
+                  ACCOUNT
+                </Link>
+              </li>
+              <li
+                className={
                   this.props.props.location.pathname === '/x' ? 'active' : ''
                 }
               >
@@ -84,16 +95,16 @@ export class InnerHeader extends Component {
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  EN/CN
+                  EN
                   <span className="caret" />
                 </a>
                 <ul className="dropdown-menu dropdown-menu-dark dropdown-left-0">
                   <li>
                     <a href>English</a>
                   </li>
-                  <li>
+                  {/* <li>
                     <a href>CHINESE</a>
-                  </li>
+                  </li> */}
                 </ul>
               </li>
               <li>

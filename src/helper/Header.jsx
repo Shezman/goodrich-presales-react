@@ -83,16 +83,16 @@ export class Header extends Component {
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  EN/CN
+                  EN
                   <span className="caret" />
                 </a>
                 <ul className="dropdown-menu dropdown-menu-dark dropdown-left-0">
                   <li>
                     <a href>English</a>
                   </li>
-                  <li>
+                  {/* <li>
                     <a href>CHINESE</a>
-                  </li>
+                  </li> */}
                 </ul>
               </li>
               <li>

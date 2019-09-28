@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class About extends Component {
   render() {
@@ -18,9 +18,9 @@ export default class About extends Component {
                     </h4>
                   </div>
                 </div>
-              </div>{" "}
+              </div>
               {/* end col */}
-            </div>{" "}
+            </div>
             {/* end row */}
           </div>
           {/* end container */}
@@ -35,7 +35,7 @@ export default class About extends Component {
                   <p>
                     GoodRich is a brand new way for you to win in sports. We are
                     a Sports Investment Exchange that allows you to buy and sell
-                    Team Chips of your favorite teams.{" "}
+                    Team Chips of your favorite teams.{' '}
                   </p>
 
                   <p>
@@ -50,29 +50,29 @@ export default class About extends Component {
                     City on a particular game. If our team wins the game, we
                     win. But if our team loses, we lose everything. It is a
                     singular moment of excitement or dejection. It just wasn’t
-                    fun for us.{" "}
+                    fun for us.{' '}
                   </p>
 
                   <p>
                     We created a cutting-edge category, and it’s called Team
-                    Chips.{" "}
+                    Chips.{' '}
                   </p>
 
                   <p>
                     Holding a chip allows you to participate in your team’s
                     success every single game, and even through the offseason.
                     It’s a continuous process! As long as you hold a chip, you
-                    have a chance to win.{" "}
+                    have a chance to win.{' '}
                   </p>
 
                   <p>
                     Here at GoodRich, we are defined by 4 core value
                     propositions. We want to build a company that upholds these
                     4 pillars of our values as we continue to revolutionize the
-                    sports entertainment industry.{" "}
+                    sports entertainment industry.{' '}
                   </p>
 
-                  <h4 class="normal-font-w">Value Prop #1: Sportsmanship</h4>
+                  <h4 class="normal-font-w">Sportsmanship</h4>
 
                   <p>
                     In sports, there are always winners and losers. It’s just
@@ -81,24 +81,24 @@ export default class About extends Component {
                     winning and losing isn’t finite. As a company that is 100%
                     dedicate to sports, we believe in good sportsmanship as a
                     fundamental value, and we built our company culture to adopt
-                    the best of sports culture.{" "}
+                    the best of sports culture.{' '}
                   </p>
 
                   <p>
                     We conduct our business with sportsmanship in mind at every
                     turn. We know how it feels to be on both sides of the
                     ledger, so you will always find us being humble when we win
-                    and gracious when we lose. It’s part of our company DNA.{" "}
+                    and gracious when we lose. It’s part of our company DNA.{' '}
                   </p>
 
-                  <h4 class="normal-font-w">VValue Prop #2: Diversity</h4>
+                  <h4 class="normal-font-w">Diversity</h4>
 
                   <p>
                     Sports is the ultimate meritocracy. It has the power to
                     reach across traditional boundaries like race and gender. It
                     doesn’t care what color you are or what class you belong to.
                     Your performance on the court or on the field determines
-                    whether you get to play or not.{" "}
+                    whether you get to play or not.{' '}
                   </p>
 
                   <p>
@@ -108,10 +108,10 @@ export default class About extends Component {
                     to be the same. We believe that having a diverse group of
                     people that brings different perspectives to the company is
                     an asset, and it is the only way we know we can grow. And
-                    more importantly, we believe it is the right thing to do.{" "}
+                    more importantly, we believe it is the right thing to do.{' '}
                   </p>
 
-                  <h4 class="normal-font-w">Value Prop #3: Unity</h4>
+                  <h4 class="normal-font-w">Unity</h4>
 
                   <p>
                     In sports, each player contributes a particular skill set to
@@ -126,7 +126,7 @@ export default class About extends Component {
                     when they no longer wanted to work together was ugly. LeBron
                     won two rings with Wade in Miami in four years. When players
                     put their individual strengths together, they were able to
-                    win multiple NBA championships as a team.{" "}
+                    win multiple NBA championships as a team.{' '}
                   </p>
 
                   <p>
@@ -135,16 +135,16 @@ export default class About extends Component {
                     goal is to assemble the right group of hard-working
                     individuals who can work together in a unified fashion
                     toward a common goal. Then, and only then, will we be
-                    successful as a company.{" "}
+                    successful as a company.{' '}
                   </p>
 
-                  <h4 class="normal-font-w">Value Prop #4: Excellence</h4>
+                  <h4 class="normal-font-w">Excellence</h4>
 
                   <p>
                     Some players play for the sake of playing, and others play
                     to win. Some are satisfied with sitting on the bench and
                     collecting a paycheck, and others will not rest until they
-                    have a ring on their finger.{" "}
+                    have a ring on their finger.{' '}
                   </p>
 
                   <p>
@@ -155,7 +155,7 @@ export default class About extends Component {
                     new experience to millions of sports fans worldwide. Simply
                     put, we won’t settle for anything less than excellence. Only
                     with our dedication and determination will we be able to
-                    achieve the results we seek.{" "}
+                    achieve the results we seek.{' '}
                   </p>
                 </div>
               </div>

@@ -1,27 +1,47 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { confirmRegister } from "../../actions/auth";
-import { toaster } from "../../helper/Toaster";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { confirmRegister } from '../../actions/auth';
+import { toaster } from '../../helper/Toaster';
 export class Congratulation extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-       token: this.props.match.params.token
+      token: this.props.match.params.token
+    };
+  }
+
+  componentDidMount() {
+    const token = localStorage.getItem('token');
+    if (token) {
+      localStorage.removeItem('token');
     }
   }
 
-  componentWillReceiveProps(newProps){
-    if(newProps.confirm_response && newProps.confirm_response.status === 'success'){
-      toaster('success', newProps.confirm_response.data && newProps.confirm_response.data.message)
-      this.props.history.push('/login')
-    }else  if(newProps.confirm_response && newProps.confirm_response.status === 'fail'){
-      toaster('error', newProps.confirm_response.data && newProps.confirm_response.error.message)
+  componentWillReceiveProps(newProps) {
+    if (
+      newProps.confirm_response &&
+      newProps.confirm_response.status === 'success'
+    ) {
+      toaster(
+        'success',
+        newProps.confirm_response.data && newProps.confirm_response.data.message
+      );
+      this.props.history.push('/login');
+    } else if (
+      newProps.confirm_response &&
+      newProps.confirm_response.status === 'fail'
+    ) {
+      toaster(
+        'error',
+        newProps.confirm_response.data &&
+          newProps.confirm_response.error.message
+      );
     }
   }
 
-  handleFunc = () =>{
-    this.props.confirmRegister(this.state.token)
-  }
+  handleFunc = () => {
+    this.props.confirmRegister(this.state.token);
+  };
 
   render() {
     return (
@@ -35,25 +55,30 @@ export class Congratulation extends Component {
                     <h1>Congratulation</h1>
                   </div>
                 </div>
-              </div>{" "}
+              </div>{' '}
               {/* end col */}
-            </div>{" "}
+            </div>{' '}
             {/* end row */}
             <div className="row ">
               <div className="container">
                 <div className="row deposits_congrats">
                   <div className="col-md-12 congratulation">
                     <p>
-                      Your Goodrich account has been approved! Please check your
-                      email to activated and start to track your sports team on
-                      the SIM now!.
+                      Your Goodrich account has been approved! Activate your
+                      account and start tracking your sports team on the SIM
+                      system now!.
                     </p>
                     <p>
                       <img src="/images/congrats.png" />
                     </p>
                   </div>
                 </div>
-                <button className='btn btn-custom' onClick={(e)=> this.handleFunc(e)} >Activate</button>
+                <button
+                  className="btn btn-custom"
+                  onClick={e => this.handleFunc(e)}
+                >
+                  Activate
+                </button>
               </div>
             </div>
           </div>

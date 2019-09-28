@@ -1,18 +1,39 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import * as _ from 'lodash';
 import { wallet } from '../../actions/auth';
 import { toaster } from '../../helper/Toaster';
+import Axios from 'axios';
 export class AccountDetails extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      wallet_data: []
+      wallet_data: [],
+      purchaseData: []
     };
   }
 
   componentDidMount() {
-    this.props.wallet();
+    const walletResponse = this.props.wallet().catch(err => {
+      console.log(err);
+      // localStorage.removeItem('token');
+      // window.location.href = '/';
+    });
+    console.log(walletResponse);
+    const { wallet_data } = this.state;
+    const token = localStorage.getItem('token');
+    if (token) {
+      this.setState(prevState => ({
+        ...prevState,
+        token
+      }));
+    }
+    // if (wallet_data.length < 1 && token) {
+    //   localStorage.removeItem('token');
+    //   window.location.href = '/';
+    // }
+    this._getPurchases();
   }
   componentWillReceiveProps(newProps) {
     const { wallet_response } = newProps;
@@ -20,9 +41,39 @@ export class AccountDetails extends Component {
       // toaster('success', 'Data fetched successfully')
       this.setState({ wallet_data: wallet_response.data });
     }
+    const token = localStorage.getItem('token');
+    console.log('Token', token);
+    console.log('Wallet response', wallet_response);
+    if (_.isEmpty(wallet_response)) {
+      console.log('Wallet Response is Empty');
+    }
+    // if (_.isEmpty(wallet_response) && token) {
+    //   localStorage.removeItem('token');
+    //   window.location.href = '/';
+    // }
   }
+
+  _getPurchases = () => {
+    const { token } = this.state;
+    console.log(token);
+    Axios.get('http://localhost:5000/wallet/purchase', {
+      headers: {
+        Authorization: localStorage.getItem('token')
+      }
+    })
+      .then(({ data: response }) => {
+        console.log(response);
+        const { data } = response;
+        this.setState(prevState => ({
+          ...prevState,
+          purchaseData: data
+        }));
+      })
+      .catch(err => console.log(err));
+  };
+
   render() {
-    const { wallet_data } = this.state;
+    const { wallet_data, purchaseData } = this.state;
     let portfolio = 0;
     wallet_data.map(item => {
       portfolio = portfolio + item.totalValue;
@@ -48,7 +99,7 @@ export class AccountDetails extends Component {
                     </li>
                     <li>
                       <a href="#settings_tab" role="tab" data-toggle="tab">
-                        Settings
+                        Profile
                       </a>
                     </li>
                   </ul>
@@ -107,7 +158,9 @@ export class AccountDetails extends Component {
                         <table className="table table-hover">
                           <thead>
                             <tr>
-                              <th>2019</th>
+                              <th>
+                                Date <span>&#38;</span> Time
+                              </th>
                               <th />
                               <th>Price</th>
                               <th>Amount</th>
@@ -115,48 +168,23 @@ export class AccountDetails extends Component {
                             </tr>
                           </thead>
                           <tbody>
-                            <tr>
-                              <td>Sep 6</td>
-                              <td>GSW</td>
-                              <td>$ 1.00</td>
-                              <td>2,000</td>
-                              <td>$ 2,000</td>
-                            </tr>
-                            <tr>
-                              <td>Sep 9</td>
-                              <td>NYK</td>
-                              <td>$ 2.00</td>
-                              <td>1,000</td>
-                              <td>$ 2,000</td>
-                            </tr>
-                            <tr>
-                              <td>Sep 11</td>
-                              <td>MIL</td>
-                              <td>$ 3.00</td>
-                              <td>3,000</td>
-                              <td>$ 9,000</td>
-                            </tr>
-                            <tr>
-                              <td>Sep 16</td>
-                              <td>GSW</td>
-                              <td>$ 1.00</td>
-                              <td>2,000</td>
-                              <td>$ 2,000</td>
-                            </tr>
-                            <tr>
-                              <td>Sep 19</td>
-                              <td>NYK</td>
-                              <td>$ 2.00</td>
-                              <td>1,000</td>
-                              <td>$ 2,000</td>
-                            </tr>
-                            <tr>
-                              <td>Sep 23</td>
-                              <td>MIL</td>
-                              <td>$ 3.00</td>
-                              <td>3,000</td>
-                              <td>$ 9,000</td>
-                            </tr>
+                            {purchaseData.length !== 0 ? (
+                              <React.Fragment>
+                                {purchaseData.map((data, index) => {
+                                  return (
+                                    <tr key={index}>
+                                      <td>{data.purchaseDate}</td>
+                                      <td>$ {data.teamId}</td>
+                                      <td>${data.price}</td>
+                                      <td>$ {data.quantity}</td>
+                                      <td>$ {data.total}</td>
+                                    </tr>
+                                  );
+                                })}
+                              </React.Fragment>
+                            ) : (
+                              <tr>No data found</tr>
+                            )}
                           </tbody>
                         </table>
                       </div>

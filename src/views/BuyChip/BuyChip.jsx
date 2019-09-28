@@ -33,9 +33,9 @@ export default class BuyChip extends Component {
         <Invest />
         {/* END INVEST PERFORMANCE */}
         {/* START TEAM PERFORMANCE */}
-        <Team />
+        {/* <Team /> */}
         {/* END TEAM PERFORMANCE */}
-        <Methodology />
+        {/* <Methodology /> */}
       </div>
     );
   }

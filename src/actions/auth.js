@@ -64,9 +64,10 @@ export function validateOtp(params) {
 export function confirmRegister(params) {
   return {
     type: `CONFIRM_REGISTER`,
-    payload: axios.get(
-      `http://ec2-52-221-50-135.ap-southeast-1.compute.amazonaws.com:3000/auth/confirm/${params}`
-    )
+    payload: axios.get(`http://localhost:5000/auth/confirm/${params}`)
+    // payload: axios.get(
+    //   `http://ec2-52-221-50-135.ap-southeast-1.compute.amazonaws.com:3000/auth/confirm/${params}`
+    // )
   };
 }
 

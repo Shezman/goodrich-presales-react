@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class Exchange extends Component {
   render() {
@@ -7,6 +7,7 @@ export default class Exchange extends Component {
         <div id="overlayLoader">
           <div id="preloader">
             <span />
+            COMING SOON
             <span />
           </div>
         </div>
@@ -14,9 +15,7 @@ export default class Exchange extends Component {
           <nav className="navbar navbar-default navbar-top navbar-fixed-top">
             <div className="navbar-header">
               <a href="../index.html" className="navbar-brand">
-                <div className="brand-logo">
-                  <i className="fa fa-bitcoin" /> TRADIFY
-                </div>
+                <div className="brand-logo">Goodrich</div>
                 <div className="brand-logo-collapsed">
                   <i className="fa fa-bitcoin" />
                 </div>
@@ -27,7 +26,8 @@ export default class Exchange extends Component {
                 <li>
                   <a href="#" data-toggle="aside">
                     <strong>
-                      <em className="fa fa-shopping-cart" /> Buy/Sell
+                      <em className="fa fa-shopping-cart" /> Buy/Sell (THIS IS
+                      JUST A PREVIEW OF OUR UPCOMING TERMINAL)
                     </strong>
                   </a>
                 </li>
@@ -35,7 +35,7 @@ export default class Exchange extends Component {
               <ul className="nav navbar-nav navbar-right mt0">
                 {/* <li class="dropdown dropdown-list">
                <a href="#" data-toggle="dropdown" data-play="bounceIn" class="dropdown-toggle">
-               <strong><i class="fa fa-btc"></i> Wallet</strong>
+               <strong><i class="fa fa-GTC"></i> Wallet</strong>
                </a>
             </li> */}
                 <li className="dropdown dropdown-list">
@@ -62,7 +62,7 @@ export default class Exchange extends Component {
                           </thead>
                           <tbody>
                             <tr>
-                              <td>Buy order SC</td>
+                              <td>Buy order LAL</td>
                               <td>
                                 <div className="progress progress-striped progress-xs">
                                   <div
@@ -85,7 +85,7 @@ export default class Exchange extends Component {
                               <td className="text-center">Complete</td>
                             </tr>
                             <tr>
-                              <td>Sell order SC</td>
+                              <td>Sell order</td>
                               <td>
                                 <div className="progress progress-striped progress-xs">
                                   <div
@@ -244,7 +244,7 @@ export default class Exchange extends Component {
                                 <div className="pannel panel-body">
                                   <div className="input-group col-sm-12 m-b">
                                     <span className="input-group-addon btn-primary group-btn-hover darkformfield">
-                                      <i className="fa fa-angle-double-up" />{" "}
+                                      <i className="fa fa-angle-double-up" />{' '}
                                       Max
                                     </span>
                                     <input
@@ -333,7 +333,7 @@ export default class Exchange extends Component {
                                   <div className="m-t-9">
                                     <div className="input-group col-sm-12 m-b">
                                       <span className="input-group-addon">
-                                        <i className="fa fa-btc" />
+                                        <i className="fa fa-GTC" />
                                       </span>
                                       <input
                                         type="text"
@@ -366,7 +366,7 @@ export default class Exchange extends Component {
                                 <div className="pannel panel-body">
                                   <div className="input-group col-sm-12 m-b">
                                     <span className="input-group-addon btn-primary group-btn-hover darkformfield">
-                                      <i className="fa fa-angle-double-up" />{" "}
+                                      <i className="fa fa-angle-double-up" />{' '}
                                       Max
                                     </span>
                                     <input
@@ -455,7 +455,7 @@ export default class Exchange extends Component {
                                   <div className="m-t-9">
                                     <div className="input-group col-sm-12 m-b">
                                       <span className="input-group-addon">
-                                        <i className="fa fa-btc" />
+                                        <i className="fa fa-GTC" />
                                       </span>
                                       <input
                                         type="text"
@@ -514,7 +514,7 @@ export default class Exchange extends Component {
                           <div className="row row-table row-flush">
                             <div className="col-xs-12">
                               <p className="mb0">
-                                $759,781,417.92{" "}
+                                $759,781,417.92{' '}
                                 <em className="fa fa-level-up"></em>
                               </p>
                               <h4 className="m0">Market Cap</h4>
@@ -539,7 +539,7 @@ export default class Exchange extends Component {
                           <div className="row row-table row-flush">
                             <div className="col-xs-12">
                               <p className="mb0">
-                                $1,947,201.24{" "}
+                                $1,947,201.24{' '}
                                 <em className="fa fa-level-down" />
                               </p>
                               <h4 className="m0">Trade Volume</h4>
@@ -567,7 +567,7 @@ export default class Exchange extends Component {
                               </p>
                               <h4 className="m0">Circ Supply</h4>
                               <span className="m-t-10">
-                                <i className="text-c-green f-16 fa fa-refresh" />{" "}
+                                <i className="text-c-green f-16 fa fa-refresh" />{' '}
                                 Circulating Supply
                               </span>
                             </div>
@@ -664,9 +664,9 @@ export default class Exchange extends Component {
                                         className="label_item"
                                         htmlFor="radio1"
                                       >
-                                        {" "}
-                                        <i className="fa fa-star text-c-blue" />{" "}
-                                      </label>{" "}
+                                        {' '}
+                                        <i className="fa fa-star text-c-blue" />{' '}
+                                      </label>{' '}
                                       BCH
                                     </td>
                                     <td className="tableSmallPad">
@@ -698,9 +698,9 @@ export default class Exchange extends Component {
                                         className="label_item"
                                         htmlFor="radio10"
                                       >
-                                        {" "}
-                                        <i className="fa fa-star text-c-blue" />{" "}
-                                      </label>{" "}
+                                        {' '}
+                                        <i className="fa fa-star text-c-blue" />{' '}
+                                      </label>{' '}
                                       ETH
                                     </td>
                                     <td className="tableSmallPad">
@@ -730,9 +730,9 @@ export default class Exchange extends Component {
                                         className="label_item"
                                         htmlFor="radio3"
                                       >
-                                        {" "}
-                                        <i className="fa fa-star text-c-blue" />{" "}
-                                      </label>{" "}
+                                        {' '}
+                                        <i className="fa fa-star text-c-blue" />{' '}
+                                      </label>{' '}
                                       XRP
                                     </td>
                                     <td className="tableSmallPad">
@@ -762,9 +762,9 @@ export default class Exchange extends Component {
                                         className="label_item"
                                         htmlFor="radio4"
                                       >
-                                        {" "}
-                                        <i className="fa fa-star text-c-blue" />{" "}
-                                      </label>{" "}
+                                        {' '}
+                                        <i className="fa fa-star text-c-blue" />{' '}
+                                      </label>{' '}
                                       STR
                                     </td>
                                     <td className="tableSmallPad">
@@ -794,9 +794,9 @@ export default class Exchange extends Component {
                                         className="label_item"
                                         htmlFor="radio5"
                                       >
-                                        {" "}
-                                        <i className="fa fa-star text-c-blue" />{" "}
-                                      </label>{" "}
+                                        {' '}
+                                        <i className="fa fa-star text-c-blue" />{' '}
+                                      </label>{' '}
                                       LTC
                                     </td>
                                     <td className="tableSmallPad">
@@ -826,9 +826,9 @@ export default class Exchange extends Component {
                                         className="label_item"
                                         htmlFor="radio6"
                                       >
-                                        {" "}
-                                        <i className="fa fa-star text-c-blue" />{" "}
-                                      </label>{" "}
+                                        {' '}
+                                        <i className="fa fa-star text-c-blue" />{' '}
+                                      </label>{' '}
                                       SC
                                     </td>
                                     <td className="tableSmallPad">
@@ -858,9 +858,9 @@ export default class Exchange extends Component {
                                         className="label_item"
                                         htmlFor="radio7"
                                       >
-                                        {" "}
-                                        <i className="fa fa-star text-c-blue" />{" "}
-                                      </label>{" "}
+                                        {' '}
+                                        <i className="fa fa-star text-c-blue" />{' '}
+                                      </label>{' '}
                                       DOGE
                                     </td>
                                     <td className="tableSmallPad">
@@ -890,9 +890,9 @@ export default class Exchange extends Component {
                                         className="label_item"
                                         htmlFor="radio8"
                                       >
-                                        {" "}
-                                        <i className="fa fa-star text-c-blue" />{" "}
-                                      </label>{" "}
+                                        {' '}
+                                        <i className="fa fa-star text-c-blue" />{' '}
+                                      </label>{' '}
                                       DGB
                                     </td>
                                     <td className="tableSmallPad">
@@ -922,9 +922,9 @@ export default class Exchange extends Component {
                                         className="label_item"
                                         htmlFor="radio9"
                                       >
-                                        {" "}
-                                        <i className="fa fa-star text-c-blue" />{" "}
-                                      </label>{" "}
+                                        {' '}
+                                        <i className="fa fa-star text-c-blue" />{' '}
+                                      </label>{' '}
                                       NXT
                                     </td>
                                     <td className="tableSmallPad">
@@ -952,7 +952,7 @@ export default class Exchange extends Component {
                       <div className="panel panel-default">
                         <div className="panel-collapse">
                           <div className="panel-body">
-                            <h4>BTC-SC</h4>
+                            <h4>Los Angeles Lakers</h4>
                             <div id="candlestickChart" className="h-500"></div>
                           </div>
                         </div>
@@ -969,7 +969,7 @@ export default class Exchange extends Component {
                            </div>
                            <h3 class="mt0">Bid Price</h3>
                            <p class="text-danger"><i class="fa fa-money"></i> $0.02</p>
-                           <p><i class="fa fa-btc"></i> 0.00000284</p>
+                           <p><i class="fa fa-GTC"></i> 0.00000284</p>
                         </div>
                      </div>
                   </div>
@@ -981,7 +981,7 @@ export default class Exchange extends Component {
                            </div>
                            <h3 class="mt0">Ask Price</h3>
                            <p class="text-green"><i class="fa fa-money"></i> $0.02</p>
-                           <p><i class="fa fa-btc"></i> 0.00000285</p>
+                           <p><i class="fa fa-GTC"></i> 0.00000285</p>
                         </div>
                      </div>
                   </div>
@@ -1006,7 +1006,7 @@ export default class Exchange extends Component {
                               <p class="m0">
                                  <small class="text-green">$0.02 <i class="fa fa-money"></i></small>
                               </p>
-                              <p><i class="fa fa-btc"></i> 0.00000286</p>
+                              <p><i class="fa fa-GTC"></i> 0.00000286</p>
                            </div>
                         </div>
                      </div>
@@ -1040,7 +1040,7 @@ export default class Exchange extends Component {
                               <p class="m0">
                                  <small class="text-danger">$0.02</small>
                               </p>
-                              <p><i class="fa fa-btc"></i> 0.00000261 <i class="fa fa-level-down text-danger"></i></p>
+                              <p><i class="fa fa-GTC"></i> 0.00000261 <i class="fa fa-level-down text-danger"></i></p>
                            </div>
                         </div>
                      </div>
@@ -1057,7 +1057,7 @@ export default class Exchange extends Component {
                               <p class="m0">
                                  <small class="text-green">$0.02</small>
                               </p>
-                              <p><i class="fa fa-btc"></i> 0.00000261 <i class="fa fa-level-up text-green"></i></p>
+                              <p><i class="fa fa-GTC"></i> 0.00000261 <i class="fa fa-level-up text-green"></i></p>
                            </div>
                         </div>
                      </div>
@@ -1089,7 +1089,7 @@ export default class Exchange extends Component {
                               <strong class="media-heading text-primary">Jimmy</strong>
                               <p><small>Posted by Jimmy@example</small></p>
                               <p class="mb-sm">
-                                 <small>We have scheduled update for BTC on 03/04/2018 example.com/btc-update</small>
+                                 <small>We have scheduled update for GTC on 03/04/2018 example.com/GTC-update</small>
                               </p>
                            </div>
                         </div>
@@ -1163,8 +1163,8 @@ export default class Exchange extends Component {
                                   </th>
                                   <th>Sum</th>
                                   <th>Total</th>
-                                  <th>Size (SC)</th>
-                                  <th>Bid (BTC)</th>
+                                  <th>Size</th>
+                                  <th>Bid (GTC)</th>
                                   <th>
                                     <i className="fa fa-star" />
                                   </th>
@@ -1367,7 +1367,7 @@ export default class Exchange extends Component {
                           <table className="w-100-p">
                             <tbody>
                               <tr>
-                                <td className="w-50-p">217.564 BTC</td>
+                                <td className="w-50-p">217.564 GTC</td>
                                 <td className="w-50-p text-right">
                                   169728986.764 SC
                                 </td>
@@ -1386,7 +1386,7 @@ export default class Exchange extends Component {
                               </li>
                             </ul>
                             <ul className="pagination pagination-sm pagi-margin">
-                              {" "}
+                              {' '}
                               <li className="active">
                                 <a href="#">1</a>
                               </li>
@@ -1423,7 +1423,7 @@ export default class Exchange extends Component {
                                   <th>
                                     <i className="fa fa-star" />
                                   </th>
-                                  <th>Ask (BTC)</th>
+                                  <th>Ask (GTC)</th>
                                   <th>Size (SC)</th>
                                   <th>Total</th>
                                   <th>Sum</th>
@@ -1629,7 +1629,7 @@ export default class Exchange extends Component {
                           <table className="w-100-p">
                             <tbody>
                               <tr>
-                                <td className="w-50-p">2155.850 BTC</td>
+                                <td className="w-50-p">2155.850 GTC</td>
                                 <td className="w-50-p text-right">
                                   455229243.263 SC
                                 </td>
@@ -1708,7 +1708,7 @@ export default class Exchange extends Component {
                             <th>Units Filled SC</th>
                             <th>Units Total SC</th>
                             <th>Actual Rate</th>
-                            <th>Estimated Total BTC</th>
+                            <th>Estimated Total GTC</th>
                             <th>
                               <i className="fa fa-times" />
                             </th>

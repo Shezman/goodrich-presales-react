@@ -19,7 +19,7 @@ export class Login extends Component {
 
     if (login_response && login_response.status === 'success' && LoginFlag) {
       window.location.href = '/account_details';
-      toaster('success', 'Login successfull');
+      toaster('success', 'Login successful');
       LoginFlag = false;
     } else if (
       login_response &&
@@ -45,7 +45,7 @@ export class Login extends Component {
       this.props
         .loginUser(data)
         .then(() => (window.location.href = '/account_details'))
-        .catch(toaster('Login Details are invalid'));
+        .catch(err => toaster('error', 'Login Details are invalid'));
       LoginFlag = true;
     } else if (login_user_name === '' && login_password !== '') {
       toaster('error', 'Please enter user name');
