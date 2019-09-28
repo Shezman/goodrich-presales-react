@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { toaster } from "../../helper/Toaster";
-import { Link } from "react-router-dom";
-import { loginUser, registerUser } from "../../actions/auth";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { toaster } from '../../helper/Toaster';
+import { Link } from 'react-router-dom';
+import { loginUser, registerUser } from '../../actions/auth';
 
-import Team from "./Team";
-import Invest from "./Invest";
-import SportsExchange from "./SportsExchange";
-import Blog from "./Blog";
-import Milestone from "./Milestone";
+import Team from './Team';
+import Invest from './Invest';
+import SportsExchange from './SportsExchange';
+import Blog from './Blog';
+import Milestone from './Milestone';
 
 let LoginFlag = false;
 export class Landing extends Component {
@@ -16,26 +16,26 @@ export class Landing extends Component {
     super(props);
 
     this.state = {
-      login_user_name: "",
-      login_password: "",
-      first_name: "",
-      last_name: "",
-      phone_number: "",
-      user_name: "",
-      register_email: "",
-      register_password: "",
-      confirm_password: ""
+      login_user_name: '',
+      login_password: '',
+      first_name: '',
+      last_name: '',
+      phone_number: '',
+      user_name: '',
+      register_email: '',
+      register_password: '',
+      confirm_password: ''
     };
   }
 
   componentWillReceiveProps(newProps) {
     const { login_response } = newProps;
-    if (login_response && login_response.status === "success" && LoginFlag) {
-      window.location.href = "/account_details";
-      toaster("success", "Login successfull");
+    if (login_response && login_response.status === 'success' && LoginFlag) {
+      window.location.href = '/account_details';
+      toaster('success', 'Login successful');
       LoginFlag = false;
-    } else if (login_response && login_response.status == "fail" && LoginFlag) {
-      toaster("error", "Something went wrong");
+    } else if (login_response && login_response.status == 'fail' && LoginFlag) {
+      toaster('error', 'Something went wrong');
       LoginFlag = false;
     }
   }
@@ -46,7 +46,7 @@ export class Landing extends Component {
     //   return;
     // }
     let reg = /^[0-9]{0,10}$/;
-    if (name === "phone_number" && reg.test(e.target.value) === false) {
+    if (name === 'phone_number' && reg.test(e.target.value) === false) {
       return;
     }
 
@@ -56,19 +56,19 @@ export class Landing extends Component {
   loginHandler = e => {
     const { login_user_name, login_password } = this.state;
     e.preventDefault();
-    if (login_user_name !== "" && login_password !== "") {
+    if (login_user_name !== '' && login_password !== '') {
       let data = {
         username: login_user_name,
         password: login_password
       };
       this.props.loginUser(data);
       LoginFlag = true;
-    } else if (login_user_name === "" && login_password !== "") {
-      toaster("error", "Please enter user name");
-    } else if (login_user_name !== "" && login_password === "") {
-      toaster("error", "Please enter password.");
+    } else if (login_user_name === '' && login_password !== '') {
+      toaster('error', 'Please enter user name');
+    } else if (login_user_name !== '' && login_password === '') {
+      toaster('error', 'Please enter password.');
     } else {
-      toaster("error", "Please fill all the fields.");
+      toaster('error', 'Please fill all the fields.');
     }
   };
 
@@ -85,32 +85,32 @@ export class Landing extends Component {
     } = this.state;
 
     if (
-      first_name !== "" &&
-      last_name !== "" &&
-      phone_number !== "" &&
-      user_name !== "" &&
-      register_email !== "" &&
-      register_password !== "" &&
-      confirm_password !== ""
+      first_name !== '' &&
+      last_name !== '' &&
+      phone_number !== '' &&
+      user_name !== '' &&
+      register_email !== '' &&
+      register_password !== '' &&
+      confirm_password !== ''
     ) {
       if (phone_number.length < 10) {
-        toaster("error", "Phone Number can't be less than 10 digits");
+        toaster('error', "Phone Number can't be less than 10 digits");
         return;
       }
       if (
-        register_email !== "" &&
+        register_email !== '' &&
         !register_email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,3})$/i)
       ) {
-        toaster("error", "Email ID is not valid");
+        toaster('error', 'Email ID is not valid');
         return;
       }
 
       if (register_password.length < 6 || confirm_password.length < 6) {
-        toaster("error", "Password must contains 6 digits.");
+        toaster('error', 'Password must contains 6 digits.');
         return;
       }
       if (register_password !== confirm_password) {
-        toaster("error", "Password and confirm password not matched.");
+        toaster('error', 'Password and confirm password not matched.');
         return;
       }
 
@@ -123,10 +123,10 @@ export class Landing extends Component {
         register_password: register_password,
         confirm_password: confirm_password
       };
-      localStorage.setItem("register_data", JSON.stringify(data));
-      this.props.history.push("/otp");
+      localStorage.setItem('register_data', JSON.stringify(data));
+      this.props.history.push('/otp');
     } else {
-      toaster("error", "Please fill all the fields");
+      toaster('error', 'Please fill all the fields');
     }
   };
 
@@ -183,7 +183,7 @@ export class Landing extends Component {
                               href="#tab_default_1"
                               data-toggle="tab"
                             >
-                              Register{" "}
+                              Register{' '}
                             </a>
                           </li>
                           <li className>
@@ -192,7 +192,7 @@ export class Landing extends Component {
                               href="#tab_default_2"
                               data-toggle="tab"
                             >
-                              Sign In{" "}
+                              Sign In{' '}
                             </a>
                           </li>
                         </ul>
@@ -222,7 +222,7 @@ export class Landing extends Component {
                                     required="required"
                                     value={first_name}
                                     onChange={e =>
-                                      this.handleChange(e, "first_name")
+                                      this.handleChange(e, 'first_name')
                                     }
                                   />
                                 </div>
@@ -236,7 +236,7 @@ export class Landing extends Component {
                                     required="required"
                                     value={last_name}
                                     onChange={e =>
-                                      this.handleChange(e, "last_name")
+                                      this.handleChange(e, 'last_name')
                                     }
                                   />
                                 </div>
@@ -250,7 +250,7 @@ export class Landing extends Component {
                                 required="required"
                                 value={user_name}
                                 onChange={e =>
-                                  this.handleChange(e, "user_name")
+                                  this.handleChange(e, 'user_name')
                                 }
                               />
                               <input
@@ -260,7 +260,7 @@ export class Landing extends Component {
                                 required="required"
                                 value={phone_number}
                                 onChange={e =>
-                                  this.handleChange(e, "phone_number")
+                                  this.handleChange(e, 'phone_number')
                                 }
                               />
                               {/* <div class="row">
@@ -290,7 +290,7 @@ export class Landing extends Component {
                                 required="required"
                                 value={register_email}
                                 onChange={e =>
-                                  this.handleChange(e, "register_email")
+                                  this.handleChange(e, 'register_email')
                                 }
                               />
                               <input
@@ -300,7 +300,7 @@ export class Landing extends Component {
                                 required="required"
                                 value={register_password}
                                 onChange={e =>
-                                  this.handleChange(e, "register_password")
+                                  this.handleChange(e, 'register_password')
                                 }
                               />
                               <input
@@ -310,7 +310,7 @@ export class Landing extends Component {
                                 required="required"
                                 value={confirm_password}
                                 onChange={e =>
-                                  this.handleChange(e, "confirm_password")
+                                  this.handleChange(e, 'confirm_password')
                                 }
                               />
                               {/* <div class="row">
@@ -356,7 +356,7 @@ export class Landing extends Component {
                                 Register
                               </button>
                               <p>
-                                By Signing up you agree to our{" "}
+                                By Signing up you agree to our{' '}
                                 <a href="#">terms of conditions</a>
                               </p>
                             </form>
@@ -380,7 +380,7 @@ export class Landing extends Component {
                                 placeholder="User Name"
                                 name="login_user_name"
                                 onChange={e =>
-                                  this.handleChange(e, "login_user_name")
+                                  this.handleChange(e, 'login_user_name')
                                 }
                                 value={login_user_name}
                                 required="required"
@@ -391,7 +391,7 @@ export class Landing extends Component {
                                 placeholder="Password"
                                 name="login_password"
                                 onChange={e =>
-                                  this.handleChange(e, "login_password")
+                                  this.handleChange(e, 'login_password')
                                 }
                                 value={login_password}
                                 required="required"
@@ -411,7 +411,7 @@ export class Landing extends Component {
                                 Sign In
                               </button>
                               <p>
-                                By Signing in you agree to our{" "}
+                                By Signing in you agree to our{' '}
                                 <a href="#">terms of conditions</a>
                               </p>
                             </form>
@@ -421,9 +421,9 @@ export class Landing extends Component {
                     </div>
                   </div>
                 </div>
-              </div>{" "}
+              </div>{' '}
               {/* end col */}
-            </div>{" "}
+            </div>{' '}
             {/* end row */}
           </div>
           {/* end container */}
