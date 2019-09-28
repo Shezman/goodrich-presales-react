@@ -1,0 +1,60 @@
+/*
+Template Name: Bootgear - Documentation Styles
+Description: HTML5 Drag & Drop Builder Documentation
+Author: CoderBoys
+Author URI: http://www.xbootstrap.com
+
+Version: 1.0.0
+
+*/
+
+body {
+  padding: 20px;
+}
+
+img {
+	margin: 40px auto 0 auto;
+}
+
+.naughtypirate {
+	background: #D1DBBD;
+	padding: 1px 20px;
+	margin-top: 40px;
+}
+
+.naughtypirate p {
+	font-size: 14px;
+	font-weight: 600;
+}
+
+
+@media (max-width: 978px) {
+  .select2 {
+    padding-left: 0px;
+    float:left;
+    width: 100%;
+  }
+  
+}
+@media (max-width: 767px) {
+   .tocify {
+       padding-bottom: 20px;
+   }
+}
+@media (max-width: 480px) {
+   .hero-unit h1 {
+       font-size: 30px;
+   }
+}
+
+@media (max-width: 767px) {
+    #toc {
+        position: relative;
+        width: 100%;
+        margin: 0px 0px 20px 0px;
+    }
+}
+
+pre .line .line-number {
+  display: none;
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Tradify - Documentation v1.0.0</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content=" Responsive Charts" />
+	<meta name="description" content="Responsive ready to use charts" />
+		
+	<!-- Core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<link href="css/jquery.tocify.css" rel="stylesheet">
+	<link href="css/prettify.css" rel="stylesheet" type="text/css">
+	
+	<!-- Style Library -->
+	<link href="css/style-library-1.css" rel="stylesheet">
+	
+	<!-- Theme Styles -->
+	<link href="css/documentation.css" rel="stylesheet">
+		
+</head>
+
+
+<body>
+     
+	<div class="container pad15">
+		<div class="row">
+			<div class="tocify col-sm-3 col-md-3">
+				<div id="toc">
+				<strong style="margin-left: 15px; font-size:25px;font-weight:bolder; font-family:'Bitter';">CRYPTO</strong>
+				<br>
+				</div><!--/.well -->
+			</div><!--/span-->
+			<div class="col-sm-9 col-md-9">
+				<div class="jumbotron">
+					<h1 style="font-size:24px; font-weight:bold;">FINECHARTS RESPONSIVE READY TO USE CHARTS</h1>
+					<br>
+					<h2>Overview</h2>
+					<p>Version: 1.0.0</p>
+					<p>Version Date: 03rd March 2018</p>
+					<p>Last Update: -</p>
+					<p>Author: CoderBoys</p>
+					<p>Support: <a href="http://www.xbootstrap.com/support">www.xbootstrap.com/support</a></p>
+					<p>Email: <a href="mailto:support@xbootstrap.com">support@xbootstrap.com</a></p>
+					<br>
+					<p>Thank you for purchasing Tradify. If you have any questions which is beyond this scope, please visit <a href="http://www.xbootstrap.com/support">our Support Website</a></p>
+				</div>
+				<h2>Product Overview</h2>
+				<p><strong>Finecharts</strong> was created as a great shortcut for learning and creating your very own trading plateform.</p>
+				<p>There are several different ways to use Tradify:</p>
+					<ol>
+						<li>Use ready to use candlestick chart in your project.</li>
+						<li>Use live updating Charts for live updates (Json).</li>
+						<li>Easily add your own text & edit them the way you want.</li>
+					</ol>
+				<br>
+				<h2>Requirements</h2>
+				<ul class="circle">
+					<li>A HTML editor.</li>
+					<li>To use the crypto you will need a host or you can run in offline mode within your computer if you wish.</li>
+				</ul>
+				<br>
+				
+				<h3>Installation</h3>
+				<ol>
+					<li>Unzip the file you downloaded from Codecanyon</li>
+					<li>Locate the 'Main' folder, this is found in the 'HTML Files'</li>
+					<li><strong>Upload this folder to your live web server</strong></li>
+					<li>Navigate to the folder in your web browser (eg. http://somedomain.com/main/)</li>
+					<li>Enjoy using crypto</li>
+				</ol>
+				<br>
+				
+				<h2>How it Works</h2>
+				<p>We've tried to make things as easy as possible for you to use, and to use it how you want to.</p>
+				<p>You might just be looking for some pre-styled candlestick chart existing project, or you might be wanting to learn building graphs & charts and aren't sure where to start, or you might be wanting to quickly integrate some pages for an urgent client meeting.</p>
+				<p><strong>However you want to use Tradify is totally up to you.</strong></p>
+				<br>
+				
+				<h3>File Structure</h3>
+				<p>In the 'HTML Files' folder are the following folders:</p>
+				<ol>
+					<li><strong>Main</strong> - This contains all of the charts you have seen in the demo.</li>
+					<li><strong>Documentation</strong> - Contains the guide.</li>
+				</ol>
+				
+				<h3>Candlestick Chart</h3>
+				<p>Here is how you can simply transform candlestick chart.</p>
+				<p>Simply replace:</p>
+				<ol>
+					<li>"Candlestick" to "line" for line chart</li>
+					<li>"Candlestick" to "bar" for bar chart</li>
+					<li>There is more trading charts coming soon!</li>
+				</ol>
+				<img class="img-responsive" src="images/code1.png">
+				<p>copy all of the required CSS & JS files.</p>
+				<img class="img-responsive" src="images/code12.png">
+				<img class="img-responsive" src="images/code13.png">
+
+				<p>For candlestick chart you only need two JS file "highcharts.js & exporting.js</p>
+				<br>
+				
+			</div>
+		</div><!-- /.row-->
+	
+	</div><!-- /.container-->
+
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.tocify.min.js"></script>
+    <script src="js/prettify.js"></script>
+
+    <script>
+        $(function() {
+
+          $("#toc").tocify({ selectors: "h2, h3, h4", scrollTo: 60, highlightOffset: 60, extendPage: true });
+
+          prettyPrint();
+
+          $(".optionName").popover({ trigger: "hover", container: "body" });
+
+          $("a[href='#']").click(function(event) {
+
+              event.preventDefault();
+
+          });
+
+          Rainbow.color();
+        });
+    </script>
+  
+</body>
+</html>
