@@ -10,7 +10,8 @@ export class AccountDetails extends Component {
 
     this.state = {
       wallet_data: [],
-      purchaseData: []
+      purchaseData: [],
+      userData: {}
     };
   }
 
@@ -34,6 +35,7 @@ export class AccountDetails extends Component {
     //   window.location.href = '/';
     // }
     this._getPurchases();
+    this._getProfile();
   }
   componentWillReceiveProps(newProps) {
     const { wallet_response } = newProps;
@@ -72,8 +74,27 @@ export class AccountDetails extends Component {
       .catch(err => console.log(err));
   };
 
+  _getProfile = () => {
+    const { token } = this.state;
+    console.log(token);
+    Axios.get('http://localhost:5000/user', {
+      headers: {
+        Authorization: localStorage.getItem('token')
+      }
+    })
+      .then(({ data: response }) => {
+        console.log(response);
+        const { data } = response;
+        this.setState(prevState => ({
+          ...prevState,
+          userData: data
+        }));
+      })
+      .catch(err => console.log(err));
+  };
+
   render() {
-    const { wallet_data, purchaseData } = this.state;
+    const { wallet_data, purchaseData, userData } = this.state;
     let portfolio = 0;
     wallet_data.map(item => {
       portfolio = portfolio + item.totalValue;
@@ -192,46 +213,49 @@ export class AccountDetails extends Component {
                     <div className="tab-pane fade" id="settings_tab">
                       <div className="row form-group">
                         <label className="col-xs-12 col-sm-4 col-sm-offset-2 text-left">
-                          Email Address:
+                          Name:
                         </label>
                         <span className="col-xs-12 col-sm-6">
-                          xxxxxxxx@gmail.com
+                          {userData.name}
                         </span>
                       </div>
                       <div className="row form-group">
                         <label className="col-xs-12 col-sm-4 col-sm-offset-2 text-left">
-                          Password:
+                          Email Address:
                         </label>
                         <span className="col-xs-12 col-sm-6">
-                          Reset Password
+                          {userData.email}
                         </span>
                       </div>
+
                       <div className="row form-group">
                         <label className="col-xs-12 col-sm-4 col-sm-offset-2 text-left">
                           Phone Number:
                         </label>
                         <span className="col-xs-12 col-sm-6">
-                          + ( x ) xxx -xxx -xxxx
+                          {userData.phoneNo}
                         </span>
                       </div>
                       <div className="row form-group">
                         <label className="col-xs-12 col-sm-4 col-sm-offset-2 text-left">
-                          Address:
+                          Username
                         </label>
-                        <span className="col-xs-12 col-sm-6">Add</span>
+                        <span className="col-xs-12 col-sm-6">
+                          {userData.username}
+                        </span>
                       </div>
                       <div className="row form-group">
                         <label className="col-xs-12 col-sm-4 col-sm-offset-2 text-left">
                           Nationality:
                         </label>
-                        <span className="col-xs-12 col-sm-6">Add</span>
+                        <span className="col-xs-12 col-sm-6"></span>
                       </div>
                       <div className="row form-group">
                         <label className="col-xs-12 col-sm-4 col-sm-offset-2 text-left">
                           Account Number:
                         </label>
                         <span className="col-xs-12 col-sm-6">
-                          (randomly generated)
+                          {userData.userId}
                         </span>
                       </div>
                       <div className="row form-group">
@@ -239,9 +263,8 @@ export class AccountDetails extends Component {
                           Broker Contact:
                         </label>
                         <span className="col-xs-12 col-sm-6">
-                          Broker Name
-                          <br />
-                          Broker Email
+                          You have not been assigned a broker yet
+                          {/* <br /> */}
                         </span>
                       </div>
                     </div>
