@@ -2,7 +2,7 @@ import Landing from '../views/Landing/Landing';
 import Exchange from '../views/Exchange/Exchange';
 import Congratulation from '../views/Landing/Congratulation';
 import Otp from '../views/Landing/Otp';
-import BuyChip from '../views/BuyChipInfo/BuyChip';
+import BuyChip from '../views/BuyChip/BuyChip';
 
 import Deposit from '../views/Deposit/Deposit';
 import SuccessDeposit from '../views/Deposit/SuccessDeposit';

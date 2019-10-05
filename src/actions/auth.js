@@ -2,7 +2,7 @@
 import axios from 'axios';
 import qs from 'qs';
 let API_URL =
-  'http://ec2-52-221-50-135.ap-southeast-1.compute.amazonaws.com:3000';
+  'http://localhost:5000';
 
 export function loginUser(params) {
   const options = {
@@ -11,7 +11,7 @@ export function loginUser(params) {
     data: qs.stringify(params),
     // url: "http://ec2-52-221-50-135.ap-southeast-1.compute.amazonaws.com:3000/auth"
     url:
-      'http://ec2-52-221-50-135.ap-southeast-1.compute.amazonaws.com:3001/auth'
+      'http://localhost:5000/auth'
   };
   return {
     type: `LOGIN_USER`,
@@ -25,7 +25,7 @@ export function registerUser(params) {
     headers: { 'content-type': 'application/x-www-form-urlencoded' },
     data: qs.stringify(params),
     url:
-      'http://ec2-52-221-50-135.ap-southeast-1.compute.amazonaws.com:3000/user/register'
+      'localhost:5000/user/register'
   };
   return {
     type: `REGISTER_USER`,
@@ -40,7 +40,7 @@ export function getOtp(params) {
     headers: { 'content-type': 'application/x-www-form-urlencoded' },
     data: qs.stringify(params),
     url:
-      'http://ec2-52-221-50-135.ap-southeast-1.compute.amazonaws.com:3000/auth/otp'
+      'http://localhost:5000/auth/otp'
   };
   return {
     type: `GET_OTP`,
@@ -54,7 +54,7 @@ export function validateOtp(params) {
     headers: { 'content-type': 'application/x-www-form-urlencoded' },
     data: qs.stringify(params),
     url:
-      'http://ec2-52-221-50-135.ap-southeast-1.compute.amazonaws.com:3000/auth/otp/verify'
+      'http://localhost:5000/auth/otp/verify'
   };
   return {
     type: `VALIDATE_OTP`,
@@ -66,7 +66,7 @@ export function confirmRegister(params) {
   return {
     type: `CONFIRM_REGISTER`,
     payload: axios.get(
-      `http://ec2-52-221-50-135.ap-southeast-1.compute.amazonaws.com:3001/auth/confirm/${params}`
+      `http://localhost:5000/auth/confirm/${params}`
     )
     // payload: axios.get(
     //   `http://ec2-52-221-50-135.ap-southeast-1.compute.amazonaws.com:3000/auth/confirm/${params}`
@@ -79,7 +79,7 @@ export function wallet(params) {
     type: `WALLET`,
     payload: axios.get(
       // `http://ec2-52-221-50-135.ap-southeast-1.compute.amazonaws.com:3000/wallet/`,
-      `http://ec2-52-221-50-135.ap-southeast-1.compute.amazonaws.com:3001/wallet/`,
+      `http://localhost:5000/wallet/`,
       {
         headers: {
           Authorization: localStorage.getItem('token')

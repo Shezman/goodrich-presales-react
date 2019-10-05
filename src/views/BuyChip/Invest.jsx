@@ -16,7 +16,7 @@ export default class Invest extends Component {
   _getChips = () => {
     axios
       .get(
-        'http://ec2-52-221-50-135.ap-southeast-1.compute.amazonaws.com:3001/chips'
+        'http://localhost:5000/chips'
       )
       .then(({ data: response }) => {
         const { data } = response;
@@ -365,7 +365,7 @@ export default class Invest extends Component {
                         <tr>
                           <td />
                           <td colSpan={3} className="text-center">
-                            <a href="#" className="addtocart">
+                            <a href="#" className="addtocart" onClick={this._addToCart}>
                               Add to Cart
                             </a>
                           </td>
