@@ -5,40 +5,13 @@ export default class Cart extends Component {
     super(props);
 
     this.state = {
-      data: [
-        {
-          items: "TOR",
-          price: 1.0,
-          amount: 0,
-          total: 0
-        },
-        {
-          items: "CHI",
-          price: 1.00,
-          amount: 0,
-          total: 0
-        },
-        {
-          items: "MEM",
-          price: 1.00,
-          amount: 0,
-          total: 0
-        },
-        {
-          items: "Favourite",
-          price: 6000,
-          amount: 0,
-          total: 0
-        },
-        {
-          items: "Supporters",
-          price: 4000,
-          amount: 0,
-          total: 0
-        }
-      ],
+      data: [],
       total_amount: 0
     };
+  }
+
+  componentDidMount() {
+    this.setState({data: this.state.data.concat(JSON.parse(localStorage['cart']))});
   }
 
   handleChange = (e, key) =>{
@@ -56,7 +29,6 @@ export default class Cart extends Component {
   }
 
   render() {
-    const { data, total_amount } = this.state;
     return (
       <div>
         <section className="home bg-image home-small innerpage" id="home">
@@ -79,19 +51,20 @@ export default class Cart extends Component {
                     <tr>
                       <th>Items In Cart</th>
                       <th>Price</th>
-                      <th>Amount</th>
+                      <th>Quantity</th>
                       <th>Total</th>
                       <th />
                     </tr>
                   </thead>
                   <tbody>
-                    {data.map((item, key) => {
+                    {this.state.data.map((item, key) => {
                       return (
                         <tr>
-                          <td>{item.items}</td>
+                          <td>{item.teamId}</td>
                           <td>${item.price}</td>
-                          <td><input type='text' value={item.amount} onChange={(e)=>this.handleChange(e, key)} /></td>
-                          <td>${item.total}</td>
+                          <td hidden> {this.state.total_amount+= item.total} </td>
+                          <td><input type='number' defaultValue={parseInt(item.quantity)} onChange={(e)=>this.handleChange(e, key)} /></td>
+                          <td>${(item.total).toFixed(2)}</td>
                           <td>
                             <i className="fa fa-trash-o" aria-hidden="true" />
                           </td>
@@ -109,7 +82,7 @@ export default class Cart extends Component {
                 <ul className="list-group mb-3">
                   <li className="list-group-item d-flex justify-content-between lh-condensed">
                     <div>
-                      <h6 className="my-0">Subtotal: ${total_amount}</h6>
+                      <h6 className="my-0">Subtotal: ${this.state.total_amount.toFixed(2)}</h6>
                       <small className="text-muted">TAX:(to be decided)</small>
                     </div>
                   </li>

@@ -108,12 +108,9 @@ export class InnerHeader extends Component {
                 </ul>
               </li>
               <li>
-                {/* <Link to="/cart">
+                <Link to="/cart">
                   <i className="fa fa-shopping-cart" />
-                </Link> */}
-                <a href="#" onClick={e => this.handleToast(e)}>
-                  <i className="fa fa-shopping-cart" />
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

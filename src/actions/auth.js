@@ -25,7 +25,7 @@ export function registerUser(params) {
     headers: { 'content-type': 'application/x-www-form-urlencoded' },
     data: qs.stringify(params),
     url:
-      'localhost:5000/user/register'
+      'http://localhost:5000/user/register'
   };
   return {
     type: `REGISTER_USER`,

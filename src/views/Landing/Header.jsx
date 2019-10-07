@@ -78,7 +78,7 @@ export class Header extends Component {
                 </ul>
               </li>
               <li>
-                <a href>
+                <a href="#cart">
                   <i className="fa fa-shopping-cart" />
                 </a>
               </li>

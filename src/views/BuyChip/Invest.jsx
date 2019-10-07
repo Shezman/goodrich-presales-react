@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import SimpleCard from './components/SimpleCard';
 import axios from 'axios';
-import { toaster } from '../../helper/Toaster';
+import AddToCartModal from '../Cart/AddToCartModal';
 
 export default class Invest extends Component {
   state = {
-    chips: []
+    chips: [],
+    isAddToCart: false,
+    chipData: '',
+    cart: []
   };
 
   componentDidMount() {
@@ -28,15 +31,53 @@ export default class Invest extends Component {
       .catch(err => console.log(err));
   };
 
-  _addToCart = teamId => {
-    toaster('success', 'This feature is coming soon');
-    console.log(teamId);
+  _addToCart = chipData => {
+    console.log("Add to cart clicked" + chipData.teamId);
+    this.setState({chipData: chipData});
+    this.setState({isAddToCart: true});
   };
 
+  _onCancelHandler = () => {
+    this.setState({isAddToCart: false});
+  }
+
+  _onConfirmHandler = (quantity) => {
+
+    //Hide the modal
+    this.setState({isAddToCart: false});
+
+    //Check if teamId already in the cart array
+    const index = this.state.cart.findIndex((chip) => {
+      return chip.teamId === this.state.chipData.teamId;
+    })
+
+    // If teamId already in cart modify the quantity
+    if(index >=0)
+    {
+      // Creating a copy of the chip in cart
+      const existingChip = Object.assign({}, this.state.cart[index]);
+
+      // Update the quantity of chips in cart
+      existingChip.quantity = parseInt(existingChip.quantity) + parseInt(quantity);
+
+      const cart = Object.assign([], this.state.cart);
+      cart[index] = existingChip;
+      this.setState({cart:cart});
+    }
+    else {
+      const chip = {'teamId': this.state.chipData.teamId, 'price': this.state.chipData.price, 'quantity': quantity, 'total': this.state.chipData.price * quantity};
+
+      this.setState({ cart: this.state.cart.concat(chip) })
+    }
+  }
+
   render() {
+    localStorage.setItem('cart', JSON.stringify(this.state.cart));
     const { chips } = this.state;
     const listOfChips = chips.map(chip => (
-      <SimpleCard chipData={chip} addToCart={this._addToCart} />
+      <div> 
+        <SimpleCard key={chip.teamId} chipData={chip} addToCart={this._addToCart} />
+      </div>
     ));
     return (
       <section id="invest-performance">
@@ -52,6 +93,7 @@ export default class Invest extends Component {
                   Want to know about how the chips are valued?{' '}
                   <a href="#">Read more.</a>
                 </p>
+                {this.state.isAddToCart && <AddToCartModal onCancel={this._onCancelHandler} onConfirm={this._onConfirmHandler}>How much quantity of {this.state.chipData.teamId} chips would you like to buy?</AddToCartModal>}
                 {listOfChips}
               </div>
               <div className="data-wrap">

@@ -54,7 +54,7 @@ export default function SimpleCard(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="large" onClick={() => addToCart(chipData.teamId)}>
+        <Button size="large" onClick={() => addToCart(chipData)}>
           Add to cart
         </Button>
       </CardActions>
