@@ -1,35 +1,35 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { toaster } from "../../helper/Toaster";
-import { registerUser } from "../../actions/auth";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { toaster } from '../../helper/Toaster';
+import { registerUser } from '../../actions/auth';
 
 export class Register extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      first_name: "",
-      last_name: "",
-      phone_number: "",
-      user_name: "",
-      register_email: "",
-      register_password: "",
-      confirm_password: ""
+      first_name: '',
+      last_name: '',
+      phone_number: '',
+      user_name: '',
+      register_email: '',
+      register_password: '',
+      confirm_password: ''
     };
   }
   componentWillReceiveProps(newProps) {
     const { register_response } = newProps;
 
-    if (register_response && register_response.status === "success") {
-      this.props.history.push("/");
-    } else if (register_response && register_response.status !== "fail") {
-      toaster("error", register_response.message);
+    if (register_response && register_response.status === 'success') {
+      this.props.history.push('/');
+    } else if (register_response && register_response.status !== 'fail') {
+      toaster('error', register_response.message);
     }
   }
 
   handleChange = (e, name) => {
     let reg = /^[0-9]{0,10}$/;
-    if (name === "phone_number" && reg.test(e.target.value) === false) {
+    if (name === 'phone_number' && reg.test(e.target.value) === false) {
       return;
     }
     this.setState({ [name]: e.target.value });
@@ -48,36 +48,36 @@ export class Register extends Component {
     } = this.state;
 
     if (
-      first_name !== "" &&
-      last_name !== "" &&
-      phone_number !== "" &&
-      user_name !== "" &&
-      register_email !== "" &&
-      register_password !== "" &&
-      confirm_password !== ""
+      first_name !== '' &&
+      last_name !== '' &&
+      phone_number !== '' &&
+      user_name !== '' &&
+      register_email !== '' &&
+      register_password !== '' &&
+      confirm_password !== ''
     ) {
       if (user_name.length < 6) {
-        toaster("error", "User name can't be less than 6 digits");
+        toaster('error', "User name can't be less than 6 digits");
         return;
       }
-      if (phone_number.length < 10) {
-        toaster("error", "Phone Number can't be less than 10 digits");
+      if (phone_number.length < 6) {
+        toaster('error', "Phone Number can't be less than 6 digits");
         return;
       }
       if (
-        register_email !== "" &&
+        register_email !== '' &&
         !register_email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,3})$/i)
       ) {
-        toaster("error", "Email ID is not valid");
+        toaster('error', 'Email ID is not valid');
         return;
       }
 
       if (register_password.length < 6 || confirm_password.length < 6) {
-        toaster("error", "Password must contains 6 digits.");
+        toaster('error', 'Password must contains 6 digits.');
         return;
       }
       if (register_password !== confirm_password) {
-        toaster("error", "Password and confirm password not matched.");
+        toaster('error', 'Password and confirm password not matched.');
         return;
       }
       let data = {
@@ -89,10 +89,10 @@ export class Register extends Component {
         register_password: register_password,
         confirm_password: confirm_password
       };
-      localStorage.setItem("register_data", JSON.stringify(data));
-      this.props.history.push("/otp");
+      localStorage.setItem('register_data', JSON.stringify(data));
+      this.props.history.push('/otp');
     } else {
-      toaster("error", "Please fill all the fields");
+      toaster('error', 'Please fill all the fields');
     }
   };
   render() {
@@ -141,7 +141,7 @@ export class Register extends Component {
                                     required="required"
                                     value={first_name}
                                     onChange={e =>
-                                      this.handleChange(e, "first_name")
+                                      this.handleChange(e, 'first_name')
                                     }
                                   />
                                 </div>
@@ -155,7 +155,7 @@ export class Register extends Component {
                                     required="required"
                                     value={last_name}
                                     onChange={e =>
-                                      this.handleChange(e, "last_name")
+                                      this.handleChange(e, 'last_name')
                                     }
                                   />
                                 </div>
@@ -169,7 +169,7 @@ export class Register extends Component {
                                 required="required"
                                 value={user_name}
                                 onChange={e =>
-                                  this.handleChange(e, "user_name")
+                                  this.handleChange(e, 'user_name')
                                 }
                               />
                               {/* <div class="row">
@@ -198,7 +198,7 @@ export class Register extends Component {
                                 required="required"
                                 value={phone_number}
                                 onChange={e =>
-                                  this.handleChange(e, "phone_number")
+                                  this.handleChange(e, 'phone_number')
                                 }
                               />
 
@@ -209,7 +209,7 @@ export class Register extends Component {
                                 required="required"
                                 value={register_email}
                                 onChange={e =>
-                                  this.handleChange(e, "register_email")
+                                  this.handleChange(e, 'register_email')
                                 }
                               />
                               <input
@@ -219,7 +219,7 @@ export class Register extends Component {
                                 required="required"
                                 value={register_password}
                                 onChange={e =>
-                                  this.handleChange(e, "register_password")
+                                  this.handleChange(e, 'register_password')
                                 }
                               />
                               <input
@@ -229,7 +229,7 @@ export class Register extends Component {
                                 required="required"
                                 value={confirm_password}
                                 onChange={e =>
-                                  this.handleChange(e, "confirm_password")
+                                  this.handleChange(e, 'confirm_password')
                                 }
                               />
 
@@ -276,7 +276,7 @@ export class Register extends Component {
                                 Register
                               </button>
                               <p>
-                                By Signing up you agree to our{" "}
+                                By Signing up you agree to our{' '}
                                 <a href="#">terms of conditions</a>
                               </p>
                             </form>

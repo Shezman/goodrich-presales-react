@@ -1,8 +1,7 @@
 // import { API_URL } from "../config";
 import axios from 'axios';
 import qs from 'qs';
-let API_URL =
-  'http://localhost:5000';
+let API_URL = 'http://localhost:5000';
 
 export function loginUser(params) {
   const options = {
@@ -10,8 +9,7 @@ export function loginUser(params) {
     headers: { 'content-type': 'application/x-www-form-urlencoded' },
     data: qs.stringify(params),
     // url: "http://ec2-52-221-50-135.ap-southeast-1.compute.amazonaws.com:3000/auth"
-    url:
-      'http://localhost:5000/auth'
+    url: 'http://localhost:5000/auth'
   };
   return {
     type: `LOGIN_USER`,
@@ -24,8 +22,7 @@ export function registerUser(params) {
     method: 'POST',
     headers: { 'content-type': 'application/x-www-form-urlencoded' },
     data: qs.stringify(params),
-    url:
-      'http://localhost:5000/user/register'
+    url: 'http://localhost:5000/user/register'
   };
   return {
     type: `REGISTER_USER`,
@@ -39,8 +36,7 @@ export function getOtp(params) {
     method: 'POST',
     headers: { 'content-type': 'application/x-www-form-urlencoded' },
     data: qs.stringify(params),
-    url:
-      'http://localhost:5000/auth/otp'
+    url: 'http://localhost:5000/auth/otp'
   };
   return {
     type: `GET_OTP`,
@@ -53,8 +49,7 @@ export function validateOtp(params) {
     method: 'POST',
     headers: { 'content-type': 'application/x-www-form-urlencoded' },
     data: qs.stringify(params),
-    url:
-      'http://localhost:5000/auth/otp/verify'
+    url: 'http://localhost:5000/auth/otp/verify'
   };
   return {
     type: `VALIDATE_OTP`,
@@ -65,9 +60,7 @@ export function validateOtp(params) {
 export function confirmRegister(params) {
   return {
     type: `CONFIRM_REGISTER`,
-    payload: axios.get(
-      `http://localhost:5000/auth/confirm/${params}`
-    )
+    payload: axios.get(`http://localhost:5000/auth/confirm/${params}`)
     // payload: axios.get(
     //   `http://ec2-52-221-50-135.ap-southeast-1.compute.amazonaws.com:3000/auth/confirm/${params}`
     // )

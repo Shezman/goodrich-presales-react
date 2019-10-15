@@ -93,8 +93,8 @@ export class Landing extends Component {
       register_password !== '' &&
       confirm_password !== ''
     ) {
-      if (phone_number.length < 10) {
-        toaster('error', "Phone Number can't be less than 10 digits");
+      if (phone_number.length < 6) {
+        toaster('error', "Phone Number can't be less than 6 digits");
         return;
       }
       if (
